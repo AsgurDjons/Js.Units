@@ -197,14 +197,12 @@ document.querySelector('.b-11').onclick = f11;
 let d12 = [6, 62, 60, 70, 1, 5];
 
 function f12() {
-    let input = document.querySelector('.i-12'),
-    out = [];
-    for (let i = 0; i <= d12.length - 1; i++) {
-        if (d12[i] === +input.value) {
+    let input = document.querySelector('.i-12').value,
+    out = -1;
+    for (let i = 0; i < d12.length; i++) {
+        if (input == d12[i]) {
             out = i;
-        } else {
-            out = -1;  
-        }
+        } 
     }
     console.log(out);
     document.querySelector('.out-12').textContent = out;
@@ -223,7 +221,12 @@ document.querySelector('.b-12').onclick = f12;
 let d13 = [6, 0, 22, 1, 4, 76];
 
 function f13() {
-
+    let out = [];    
+    for (let i = d13.length - 1; i >= 0; i--) {
+        out[out.length] = d13[i];
+    }
+    d13 = out;
+    console.log(d13);
     showArr('.out-13', d13);
 }
 
@@ -241,7 +244,11 @@ document.querySelector('.b-13').onclick = f13;
 let d14 = [];
 
 function f14() {
-
+    let input = +document.querySelector('.i-14').value;
+    for (let i = 0; i < input; i++) {
+        d14[d14.length] = 1;
+    }
+    console.log(d14);
     showArr('.out-14', d14);
 }
 
@@ -257,8 +264,10 @@ document.querySelector('.b-14').onclick = f14;
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
-
-
+    let input = +document.querySelector('.i-15').value;
+    if (d15.indexOf(input) == -1) {
+        d15[d15.length] = input;
+    }
     showArr('.out-15', d15);
 }
 
@@ -276,7 +285,7 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
-
+    d16 = d161.concat(d162);
     showArr('.out-16', d16);
 }
 
@@ -294,7 +303,12 @@ let d171 = ['a', 'b', 'c', 'd'];
 let d172 = [1, 2, 3, 4, 5];
 
 function f17() {
-
+    for (let i = 0; i < d171.length; i++) {
+        d17[d17.length] = d171[i];
+    }
+    for (let i = 0; i < d172.length; i++) {
+        d17[d17.length] = d172[i];
+    }
     showArr('.out-17', d17);
 }
 
@@ -311,7 +325,10 @@ document.querySelector('.b-17').onclick = f17;
 let d18 = ['b', 'c', '45', 'e', 'z', 'y'];
 
 function f18() {
-
+    let input = document.querySelector('.i-18').value,
+    out = false;
+    if(d18.includes(input) == true) out = true;
+    document.querySelector('.out-18').textContent = out;
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -327,7 +344,15 @@ let d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged'
 let maxString = '';
 
 function f19() {
+    let max = d19[0].length;
+    for (let i = 0; i < d19.length; i++) {
+        if (d19[i].length > max) {
+            max = d19[i].length;
+            maxString = d19[i];
+        }
+    }
 
+    document.querySelector('.out-19').textContent = maxString;
 }
 
 document.querySelector('.b-19').onclick = f19;
