@@ -344,10 +344,9 @@ let d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged'
 let maxString = '';
 
 function f19() {
-    let max = d19[0].length;
+    maxString = d19[0];
     for (let i = 0; i < d19.length; i++) {
-        if (d19[i].length > max) {
-            max = d19[i].length;
+        if (d19[i].length > maxString.length) {
             maxString = d19[i];
         }
     }
@@ -368,7 +367,9 @@ document.querySelector('.b-19').onclick = f19;
 let d20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
-
+    let out = '';
+    out = d20.join('');
+    document.querySelector('.out-20').textContent = out;
 }
 
 document.querySelector('.b-20').onclick = f20;
