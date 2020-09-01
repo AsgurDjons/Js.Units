@@ -204,7 +204,6 @@ function f12() {
             out = i;
         } 
     }
-    console.log(out);
     document.querySelector('.out-12').textContent = out;
 }
 
