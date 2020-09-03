@@ -220,7 +220,7 @@ function f12() {
     let out = '';
     for (let i = 0; i < a12.length; i++) {
         for (let p = 0; p < a12[i].length; p++) {
-            if (a12[i][p] == 1) out += a12[i][p];
+            if (a12[i][p] == 1) out += a12[i][p] + ' ';
         }
     }
     document.querySelector('.out-12').textContent = out;
@@ -383,12 +383,15 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a20 = [
-
+    [[0,3]],
+    [[0,0,8],[0,9]],
+    [0,[12],18],
+    12
 ];
 
 console.group('Task 20 ================');
-console.log(a19[1][1][1] == 9);
-console.log(a19[2][2] == 18);
-console.log(a19[3]== 12);
+console.log(a20[1][1][1] == 9);
+console.log(a20[2][2] == 18);
+console.log(a20[3]== 12);
 
 console.groupEnd();

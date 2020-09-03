@@ -2,12 +2,11 @@
 //Создайте массив ar1 содержащий строки, числа, булевы значения. Выведите его в .out-1. 
 // Вывод - по нажатию кнопки b-1
 
-// let ar1 = // переменную обьявляем здесь!!!!
 let ar1 = ['hello', 'worold', 10, 11, true, false];
+let out1 = document.querySelector('.out-1');
 
 function f1() {
-    //ваш_элемент.innerHTML = ar1; // да так можно выводить!!!!
-    document.querySelector('.out-1').innerHTML = ar1;
+   out1.innerHTML = ar1;
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -128,17 +127,19 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод в out-8
 
 let ar8 = [];
+let out8 = document.querySelector('.out-8');
+let out81 = document.querySelector('.out-8-1');
 
 function f8() {
-    let out = '';
-    ar8[3] = 3.14;
-    ar8[4] = 17;
-    ar8[6] = 5;
-    document.querySelector('.out-8').textContent = ar8;
-    for (let i = 0; i < ar8.length; i++) {
-        out += i + '-';
-    }
-    document.querySelector('.out-8-1').textContent = out;
+   ar8[3] = 3.14;
+   ar8[4] = 17;
+   ar8[6] = 5;
+   let count = '';
+   for (let i = 0; i < ar8.length; i++) {
+      count += ar8[i] + '-';
+   }
+   out8.innerHTML = count;
+   out81.innerHTML = ar8.length;
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -169,7 +170,7 @@ document.querySelector('.b-9').onclick = f9;
 let ar10 = [100, 200, 300, 400, 700, 121];
 
 function f10() {
-    document.querySelector('.out-10').textContent = `${ar10[1]} ${ar10[ar10.length- 1]}`;
+   document.querySelector('.out-10').innerHTML = ar10[1] + ar10[ar10.length - 1];
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -322,18 +323,16 @@ document.querySelector('.b-16').onclick = f16;
 // Вывод - по нажатию кнопки b-17
 // Вывод в out-17
 
-let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0,];
+let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
 function f17() {
-    let out = [];
-    for (let i = 0; i < ar17.length; i++) {
-        if (ar17[i] > 3) {
-            out[out.length] = ar17[i];
-        }
-    }
-    console.log(out);
-    ar17 = out;
-    document.querySelector('.out-17').textContent = ar17;
+   let moreThen3 = [];
+   for (let i = 0; i < ar17.length; i++) {
+      if (ar17[i] > 3) {
+         moreThen3.push(ar17[i]);
+      }
+   }
+   document.querySelector('.out-17').innerHTML = moreThen3.length;
 }
 
 document.querySelector('.b-17').onclick = f17;
