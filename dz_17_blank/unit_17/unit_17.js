@@ -7,6 +7,7 @@ b7_res = [], b8_res = [], b9_num = [], b9_string = [], b10_res;
 Действия должны запускаться при вызове функции t1.</p>  */
 
 function t1() {
+    a1_res = [];
     let a1 = [4, 5, 6, 7, 12, 34, 56, 78, 90, 11];
     let out = a1.map(elem => {
         a1_res.push(elem * 2);
