@@ -237,11 +237,14 @@ document.querySelector('.div-19').onmouseout = t19;
 /*  Дан элемент progress. Напишите фукнцию t20 которая увеличивает его 
 value на 1 при каждом событии mousemove внутри progress. */
 
-let nums = 10;
+let progres = document.querySelector('progress');
+let nums = progres.value;
 function t20() {
-    let progres = document.querySelector('progress');
     progres.value = nums;
     nums++;
     document.querySelector('#value').textContent = progres.value;
+    if (progres.value == 100) {
+        document.querySelector('progress').removeEventListener('mouseout', t20);
+    }
 }
-document.querySelector('progress').onmouseout = t20;
+document.querySelector('progress').addEventListener('mouseout', t20);
