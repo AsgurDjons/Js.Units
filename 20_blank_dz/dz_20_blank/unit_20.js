@@ -44,29 +44,30 @@ document.querySelector('.i-3').addEventListener('keyup', t3);
 /*  Дан input .i-4. Напишите функцию t4, которая выводит в .out-4 только символы в нижнем регистре. 
 Т.е. ввели ab4Bci в out получаем ab4bci. */
 
-function t4() {
-
+function t4(e) {
+    document.querySelector('.out-4').textContent += e.key.toLowerCase();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.i-4').addEventListener('keypress', t4);
 
 // Task 5 ============================================
-/*  Дан input .i-5. Напишите функцию t5, которая выводит в .out-5 все вводимые символы в верхнем регистре. Т.е. пользователь ввел AbCd и функция выведет ABCD. */
+/*  Дан input .i-5. Напишите функцию t5, которая выводит в .out-5 все 
+вводимые символы в верхнем регистре. Т.е. пользователь ввел AbCd и функция выведет ABCD. */
 
-function t5() {
-
+function t5(e) {
+    document.querySelector('.out-5').textContent += e.key.toUpperCase();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.i-5').addEventListener('keypress', t5);
 
 // Task 6 ============================================
 /*  Дан input .i-6. Напишите функцию t6, которая выводит в .i-6 только символы в нижнем регистре.  */
 
-function t6() {
-
+function t6(e) {
+    console.log(e);
 }
 
-// ваше событие здесь!!!
+document.querySelector('.i-6').addEventListener('keydown', t6);
 
 
 // Task 7 ============================================
