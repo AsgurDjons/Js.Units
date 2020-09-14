@@ -151,9 +151,17 @@ document.querySelector('.i-10').addEventListener('keyup', t10);
 через добавление класса CSS. Для удобства рекомендую каждой клавише добавить атрибут data с символом. 
 Если нажата клавиша caps lock - то присвоить ей затемнение, которое работает до последующего отжатия клавиши. */
 
-function t11() {
-
+function t11(e) {
+    console.log(e.key);
+    let items = document.querySelectorAll('.key-item');
+    items.forEach(item => {
+        if (item.getAttribute("data-key") == e.key) {
+            item.classList.add('keydown-item');
+        }else {
+            item.classList.remove('keydown-item'); 
+        }
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.i-11').addEventListener('keydown', t11);
 
