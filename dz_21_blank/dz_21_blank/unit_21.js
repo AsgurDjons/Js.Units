@@ -140,19 +140,46 @@ document.querySelector('.div-11').addEventListener('touchstart', t11);
 const images = document.querySelectorAll('.img-12-min');
 let count = 0; // переменная, которая указывает на номер активного изображения в images
 
-const next = document.querySelectorAll('.next');
+shov ();
+
+const next = document.querySelector('.next');
 next.onclick = nextFunction;
 
-const prev = document.querySelectorAll('.prev');
+const prev = document.querySelector('.prev');
 prev.onclick = prevFunction;
 
+const reset = document.querySelector('.reset');
+reset.onclick = resetFunction;
+
 function nextFunction() {
-
+    hiden ();
+    count ++;
+    if (count > images.length - 1) {
+        count = 0;
+    }
+    shov(count);
 }
-
 function prevFunction() {
-
+    hiden ();
+    count --;
+    if(count < 0) {
+        count = images.length -1;
+    }
+    shov(count);
+}
+function shov (i = 0) {
+    const max = document.querySelector('.img-12-max');
+    images[i].classList.add('active-img');
+    max.src = images[i].src;
+}
+function hiden () {
+    images.forEach(item => {
+        item.classList.remove('active-img');
+    });
+}
+function resetFunction() {
+    count = 0;
+    hiden ();
+    shov (count);
 }
 
-
-// ваше событие здесь!!!
