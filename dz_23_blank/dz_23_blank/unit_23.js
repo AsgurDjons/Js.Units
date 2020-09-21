@@ -17,7 +17,7 @@ document.querySelector('.b-1').addEventListener('click', t1);
 
 function t2() {
     let a2 = [7,6,5];
-    localStorage.setItem('a2', a2);
+    localStorage.setItem('a2', JSON.stringify(a2));
 }
 
 document.querySelector('.b-2').addEventListener('click', t2);
@@ -28,8 +28,14 @@ document.querySelector('.b-2').addEventListener('click', t2);
 Выведите в out-3 в формате ключ пробел значение перенос строки.  */
 
 function t3() {
-    let out = localStorage.getItem('a2');
-    document.querySelector('.out-3').textContent = out;
+    let a = localStorage.getItem('a2'),
+        a2 = JSON.parse(a),
+        out = '';
+    for (let i = 0; i < a2.length; i++) {
+        out += i + ' ' +  a2[i] + '<br>';
+    }
+
+    document.querySelector('.out-3').innerHTML = out;
 }
 
 document.querySelector('.b-3').addEventListener('click', t3);
@@ -61,9 +67,6 @@ function t5() {
         for (const key in obj) {
             out += key + ' ' + obj[key] + '<br>';
         }
-        // for (let i = 0; i < obj.length; i++) {
-        //     console.log(i);
-        // }
     document.querySelector('.out-5').innerHTML = out;
 }
 
@@ -86,10 +89,11 @@ document.querySelector('.b-6').addEventListener('click', t6);
 
 let a7 = [];
 function t7() {
-    let input = document.querySelector('.i-7').value;
-    a7.push(input);
+    let input = document.querySelector('.i-7');
+    a7.push(input.value);
     console.log(a7);
     localStorage.setItem('a7', JSON.stringify(a7));
+    input.value = '';
 }
 
 document.querySelector('.b-7').addEventListener('click', t7);
