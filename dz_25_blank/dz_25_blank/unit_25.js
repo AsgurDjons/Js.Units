@@ -4,9 +4,17 @@
 Выведите в out-1 результат. Запускаться функция должна по нажатию b-1. */
 
 function t1() {
+    let http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-1').textContent = this.response;
+        }
+    };
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=1', true);
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-1').addEventListener('click', t1);
 
 // Task 2 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. 
@@ -14,10 +22,17 @@ function t1() {
 Выведите в out-2 результат. Запускаться функция должна по нажатию b-2. */
 
 function t2() {
-
+    let http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-2').textContent = this.response;
+        }
+    };
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=2&name=Zhenya', true);
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-2').addEventListener('click', t2);
 
 
 // Task 3 ============================================
@@ -26,10 +41,17 @@ function t2() {
 Выведите в out-3 результат. Запускаться функция должна по нажатию b-3. */
 
 function t3() {
-
+    let http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-3').textContent = this.response;
+        }
+    };
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=3&num1=10&num2=3', true);
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-3').addEventListener('click', t3);
 
 
 // Task 4 ============================================
@@ -39,10 +61,17 @@ function t3() {
 Запускаться функция должна по нажатию b-4. */
 
 function t4() {
-
+    const http = new XMLHttpRequest();
+    http.addEventListener('readystatechange', function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-4').textContent = this.response;
+        }
+    });
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=4&num1=1&num2=10');
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-4').addEventListener('click', t4);
 
 // Task 5 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. 
@@ -50,10 +79,17 @@ function t4() {
 Выведите в out-5 результат. Запускаться функция должна по нажатию b-5. */
 
 function t5() {
-
+    const http = new XMLHttpRequest();
+    http.addEventListener('readystatechange', function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-5').textContent = this.response;
+        }
+    });
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=5');
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-5').addEventListener('click', t5);
 
 // Task 6 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. 
@@ -62,10 +98,17 @@ function t5() {
 должна по нажатию b-6. */
 
 function t6() {
-
+    const http = new XMLHttpRequest();
+    http.addEventListener('readystatechange', function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-6').textContent = this.response;
+        }
+    });
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=6&num1=5&num2=14');
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-6').addEventListener('click', t6);
 
 
 // Task 7 ============================================
@@ -74,10 +117,17 @@ function t6() {
 Выведите в out-7 результат. Запускаться функция должна по нажатию b-7. */
 
 function t7() {
-
+    const http = new XMLHttpRequest();
+    http.addEventListener('readystatechange', function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-7').textContent = this.response;
+        }
+    });
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=7');
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-7').addEventListener('click', t7);
 
 // Task 8 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 8. 
@@ -86,10 +136,17 @@ function t7() {
 Запускаться функция должна по нажатию b-8.*/
 
 function t8() {
-
+    const http = new XMLHttpRequest();
+    http.addEventListener('readystatechange', function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-8').textContent = this.response;
+        }
+    });
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=8&year=1992');
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-8').addEventListener('click', t8);
 
 
 // Task 9 ============================================
@@ -99,10 +156,17 @@ function t8() {
 Выведите в out-9 результат. Запускаться функция должна по нажатию b-9. */
 
 function t9() {
-
+    const http = new XMLHttpRequest();
+    http.addEventListener('readystatechange', function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-9').textContent = this.response;
+        }
+    });
+    http.open('GET', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=9&m=1&d=1&y=1');
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-9').addEventListener('click', t9);
 
 
 // Task 10 ============================================
