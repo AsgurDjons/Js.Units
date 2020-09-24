@@ -177,8 +177,18 @@ document.querySelector('.b-9').addEventListener('click', t9);
 */
 
 function t10() {
-
+    let http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-10').textContent = this.response;
+        }
+    };
+    http.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=1', true);
+    http.send();
 }
+
+document.querySelector('.b-10').addEventListener('click', t10);
+
 // Task 11 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. 
 Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. 
@@ -186,10 +196,17 @@ function t10() {
 Запускаться функция должна по нажатию b-11. */
 
 function t11() {
-
+    let http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-11').textContent = this.response;
+        }
+    };
+    http.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=2&name=Zhenya', true);
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-11').addEventListener('click', t11);
 
 // Task 12 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. 
@@ -198,10 +215,17 @@ function t11() {
 Запускаться функция должна по нажатию b-12.*/
 
 function t12() {
-
+    let http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-12').textContent = this.response;
+        }
+    };
+    http.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=3&num1=12&num2=31', true);
+    http.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-12').addEventListener('click', t12);
 
 // Task 13 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 4. 
@@ -210,10 +234,17 @@ function t12() {
 Запускаться функция должна по нажатию b-13.*/
 
 function t13() {
-
+    const request = new XMLHttpRequest();
+    request.addEventListener('readystatechange', function(){
+        if (request.readyState == 4 && request.status == 200) {
+            document.querySelector('.out-13').textContent = request.response;
+        }
+    });
+    request.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=4&num1=12&num2=31');
+    request.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-13').addEventListener('click', t13);
 
 // Task 14 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. 
@@ -221,10 +252,17 @@ function t13() {
 Выведите в out-14 результат. Запускаться функция должна по нажатию b-14.*/
 
 function t14() {
-
+    const request = new XMLHttpRequest();
+    request.addEventListener('readystatechange', function(){
+        if (request.readyState == 4 && request.status == 200) {
+            document.querySelector('.out-14').textContent = request.response;
+        }
+    });
+    request.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=5');
+    request.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-14').addEventListener('click', t14);
 
 // Task 15============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. Добавьте 
@@ -232,10 +270,17 @@ function t14() {
 параметр auth (ключ в чате). Выведите в out-15 результат. Запускаться функция должна по нажатию b-15. */
 
 function t15() {
-
+    const request = new XMLHttpRequest();
+    request.addEventListener('readystatechange', function(){
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-15').textContent = this.response;
+        }
+    });
+    request.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=6&num1=12&num2=31');
+    request.send();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-15').addEventListener('click', t15);
 
 // Task 16 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все 
@@ -243,10 +288,17 @@ function t15() {
 Выведите в out-16 результат. Запускаться функция должна по нажатию b-16. */
 
 function t16() {
-
+    const request = new XMLHttpRequest();
+    request.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=7');
+    request.send();
+    request.addEventListener('readystatechange', function(){
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-16').textContent = this.response;
+        }
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-16').addEventListener('click', t16);
 
 // Task 17 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 8. В 
@@ -255,10 +307,17 @@ function t16() {
 функция должна по нажатию b-17. */
 
 function t17() {
-
+    const request = new XMLHttpRequest();
+    request.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=8&year=1992');
+    request.send();
+    request.addEventListener('readystatechange', function(){
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector('.out-17').textContent = this.response;
+        }
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-17').addEventListener('click', t17);
 
 // Task 18 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В 
@@ -267,8 +326,15 @@ function t17() {
 Запускаться функция должна по нажатию b-18. */
 
 function t18() {
-
+    const request = new XMLHttpRequest();
+    request.open('POST', 'http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=9&m=1&d=1&y=1');
+    request.send();
+        request.addEventListener('readystatechange', function () {
+           if (this.readyState == 4 && this.status == 200) {
+               document.querySelector('.out-18').textContent = this.response;
+           } 
+        });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-18').addEventListener('click', t18);
 
