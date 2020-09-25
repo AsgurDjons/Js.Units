@@ -8,9 +8,26 @@
 */
 
 function t1() {
+    const pr1 = new Promise((resolve, reject) => {
+        fetch ('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=1', {
+            method: 'GET',
+        }).then(data => {
+            resolve(data.text());
+        });
+    });
+    const pr2 = new Promise((resolve, reject) => {
+        fetch ('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=2&name=Zhenya', {
+            method: 'GET',
+        }).then(data => {
+            resolve(data.text());
+        });
+    });
+    Promise.all([pr1,pr2]).then(data => {
+        document.querySelector('.out-1').textContent = data;
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-1').addEventListener('click', t1);
 
 // Task 2 ============================================
 /* 
